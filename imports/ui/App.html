@@ -1,0 +1,80 @@
+<body>
+  {{> mainContainer}}
+</body>
+
+<template name="mainContainer">
+  <div class="app-wrapper">
+    <header class="app-header">
+      <div class="header-left">
+        <div class="logo">✓</div>
+        <div class="header-title">
+          <h1>MY TODO LIST</h1>
+          <p>STAY FOCUSED. GET THINGS DONE.</p>
+        </div>
+      </div>
+      <div class="header-right">
+  {{#if currentUser}}
+  <div class="user-info">
+    <div class="user-avatar">👤</div>
+    <div class="user-details">
+      <span class="user-name">{{currentUser.username}}</span>
+      <span class="user-email">{{userEmail}}</span>
+    </div>
+    <button class="logout-btn" id="logout-btn">▾</button>
+  </div>
+  {{else}}
+  {{> loginButtons}}
+  {{/if}}
+</div>
+    </header>
+
+    {{#if currentUser}}
+    <main class="main-content">
+      <div class="add-task-form">
+        <input type="text" id="task-input" placeholder="WHAT NEEDS TO BE DONE?" />
+        <select id="category-select">
+          <option value="Work">🏢 WORK</option>
+          <option value="Personal">🏠 PERSONAL</option>
+          <option value="Urgent">🔥 URGENT</option>
+          <option value="Other">⭐ OTHERS</option>
+        </select>
+        <button id="add-task-btn">ADD TASK +</button>
+      </div>
+
+      <div class="filter-tabs">
+        <button class="filter-btn {{#if isActive 'All'}}active{{/if}}" data-filter="All">⊞ ALL</button>
+        <button class="filter-btn work-btn {{#if isActive 'Work'}}active{{/if}}" data-filter="Work">🏢 WORK</button>
+        <button class="filter-btn personal-btn {{#if isActive 'Personal'}}active{{/if}}" data-filter="Personal">🏠 PERSONAL</button>
+        <button class="filter-btn urgent-btn {{#if isActive 'Urgent'}}active{{/if}}" data-filter="Urgent">🔥 URGENT</button>
+        <button class="filter-btn other-btn {{#if isActive 'Other'}}active{{/if}}" data-filter="Other">⭐ OTHERS</button>
+      </div>
+
+      <ul class="task-list" id="task-list">
+        {{#each tasks}}
+          {{> task}}
+        {{/each}}
+      </ul>
+
+      <div class="task-footer">
+        <span>📋 {{taskCount}} TASKS</span>
+        <span>✓ {{completedCount}} COMPLETED</span>
+        <button id="clear-completed-btn">🗑 CLEAR COMPLETED</button>
+      </div>
+    </main>
+    {{else}}
+    <div class="login-prompt">
+      <h2>Please log in to manage your tasks</h2>
+    </div>
+    {{/if}}
+  </div>
+</template>
+
+<template name="task">
+  <li class="task-item {{#if isChecked}}completed{{/if}}" draggable="true" data-id="{{_id}}">
+    <span class="drag-handle">⠿</span>
+    <input type="checkbox" checked="{{isChecked}}" class="task-checkbox" />
+    <span class="task-text">{{text}}</span>
+    <span class="category-badge {{categoryClass}}">{{category}}</span>
+    <button class="delete-btn">🗑</button>
+  </li>
+</template>
