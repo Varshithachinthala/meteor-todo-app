@@ -20,12 +20,13 @@
     "@rspack/core": "^1.7.1",
     "@rspack/plugin-react-refresh": "^1.4.3"
   },
-  "meteor": {
+ "meteor": {
     "mainModule": {
       "client": "client/main.js",
       "server": "server/main.js"
     },
     "testModule": "tests/main.js",
-    "modern": true
+    "modern": true,
+    "hmrEnabled": false
   }
 }
