@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
 
 * {
   margin: 0;
@@ -384,11 +384,101 @@ body {
 #login-buttons input[type="submit"],
 #login-buttons button[type="submit"] {
   background: #1a1a2e !important;
-  color: white !important;
+  color: rgb(234, 229, 229) !important;
   border: none !important;
   border-radius: 8px !important;
   padding: 12px 20px !important;
   font-weight: 700 !important;
   width: 100% !important;
   cursor: pointer !important;
+}
+.accounts-dialog {
+  color: #333 !important;
+}
+
+.accounts-dialog * {
+  color: #333 !important;
+}
+
+.accounts-dialog a {
+  color: #333 !important;
+}
+
+.accounts-dialog label {
+  color: #333 !important;
+}
+
+.accounts-dialog .close {
+  color: #333 !important;
+  opacity: 1 !important;
+}
+
+#login-buttons-dropdown-align .dropdown-menu * {
+  color: #333 !important;
+}
+
+#login-dropdown-list * {
+  color: #333 !important;
+}
+.accounts-dialog .additional-link-container a {
+  color: #333 !important;
+  font-weight: 600 !important;
+}
+
+.accounts-dialog .forgot-password-link {
+  color: #333 !important;
+}
+
+.accounts-dialog #login-buttons-forgot-password {
+  color: #333 !important;
+}
+
+.accounts-dialog #signup-link {
+  color: #333 !important;
+}
+
+.login-close-text {
+  color: #333 !important;
+}
+
+#login-buttons #login-dropdown-list .close {
+  color: #333 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+a#login-buttons-logout {
+  color: #333 !important;
+}
+div[id="login-dropdown-list"] * {
+  color: #1a1a2e !important;
+}
+
+div[id="login-dropdown-list"] a {
+  color: #1a1a2e !important;
+}
+
+div[id="login-dropdown-list"] span {
+  color: #1a1a2e !important;
+}
+
+div[id="login-dropdown-list"] .close {
+  color: #1a1a2e !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+a.login-close-text {
+  color: #333 !important;
+}
+
+a#signup-link {
+  color: #333 !important;
+}
+
+a#forgot-password-link {
+  color: #333 !important;
+}
+
+.additional-link {
+  color: #333 !important;
 }
